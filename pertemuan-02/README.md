@@ -14,3 +14,5 @@ Pada Pertemuan Ke-2 ini saya :
 8.  Menambahkan Styling pada <id="home"> di CSS Eksternal.
 9.  Menambahkan & Merevisi Styling HTML di CSS Eksternal.
 10. Menerapkan Flexbox pada Tombol Navigasi Halaman HTML saya.
+11. Menerapkan CSS Grid di Halaman HTML.
+12. Menerapkan Desain Web Responsive di Halaman HTML saya.
