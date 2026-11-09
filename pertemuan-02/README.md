@@ -8,3 +8,5 @@ Pada Pertemuan Ke-2 ini saya :
 2. Menambahkan Formulir pada Section ID Contact, adapun Formulir itu belum ada Styling.
 3. Menambahkan Comment untuk mencegah ketidaktahuan letak kode HTML.
 4. Menambahkan Styling pada <id="about"> dan <id="contact"> yang terletak sebelum </head>.
+5. Memisahkan CSS Internal <style> menjadi File tersendiri yang bernama style.css.
+6. Menghubungkan CSS Eksternal ke HTML menggunakan <link rel="stylesheet" href="style.css" />.
