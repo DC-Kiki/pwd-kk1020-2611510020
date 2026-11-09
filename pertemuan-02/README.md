@@ -10,3 +10,5 @@ Pada Pertemuan Ke-2 ini saya :
 4. Menambahkan Styling pada <id="about"> dan <id="contact"> yang terletak sebelum </head>.
 5. Memisahkan CSS Internal <style> menjadi File tersendiri yang bernama style.css.
 6. Menghubungkan CSS Eksternal ke HTML menggunakan <link rel="stylesheet" href="style.css" />.
+7. Menambahkan Box Model pada CSS Eksternal.
+8. Menambahkan Styling pada <id="home"> di CSS Eksternal.
