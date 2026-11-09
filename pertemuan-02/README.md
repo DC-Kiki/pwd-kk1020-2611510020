@@ -12,3 +12,4 @@ Pada Pertemuan Ke-2 ini saya :
 6. Menghubungkan CSS Eksternal ke HTML menggunakan <link rel="stylesheet" href="style.css" />.
 7. Menambahkan Box Model pada CSS Eksternal.
 8. Menambahkan Styling pada <id="home"> di CSS Eksternal.
+9. Menambahkan & Merevisi Styling HTML di CSS Eksternal.
