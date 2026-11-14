@@ -11,7 +11,34 @@ const phi = 3.14;
   3.14 = Tipe Data Desimal (Const)
 */
 
-$paras = TRUE;
+$paras = true;
+$semester = 1;
+
+switch ($semester) {
+  case 1:
+    $semesterku = "Satu";
+    break;
+
+  case 2:
+    $semesterku = "Dua";
+    break;
+
+  case 3:
+    $semesterku = "Tiga";
+    break;
+
+  case 4:
+    $semesterku = "Empat";
+    break;
+
+  case 5:
+    $semesterku = "Lima";
+    break;
+
+  default:
+    $semesterku = "Tes";
+    break;
+}
 ?>
 
 <!doctype html>
@@ -66,6 +93,12 @@ $paras = TRUE;
       <article>
         <h3>Profil Singkat</h3>
         <p>Saya mahasiswa Program Studi Sistem Informasi.</p>
+        <?php
+        if ($paras == 1):
+          echo "<p>Saya berwajah tampan (Calon Perwira).</p>";
+        endif;
+        ?>
+        <p>Semester <?php echo $semester ?> (<?= $semesterku ?>)</p>
 
         <h3>Target Belajar</h3>
 
