@@ -9,8 +9,22 @@
 
   <body>
     <header>
-      <h1>Akses 3 Halaman saya :</h1>
-      <nav>
+      <div class="header-top">
+        <h1>Akses 3 Halaman saya :</h1>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Buka navigasi"
+          aria-controls="navMenu"
+          aria-expanded="false"
+        >
+          &#9776;
+        </button>
+      </div>
+
+      <nav id="navMenu">
         <ul>
           <li><a href="#home">Beranda</a></li>
           <li><a href="#about">Tentang</a></li>
@@ -50,7 +64,7 @@
           Kunjungi <a href="https://github.com/DC-Kiki">Profil github saya</a>.
         </p>
 
-        <form action="index.html" method="post">
+        <form id="contactForm" action="index.html" method="post">
           <!-- Menambahkan Form Nama berbentuk Teks -->
           <div class="form-group">
             <label for="nama">Nama Lengkap</label><br />
@@ -173,10 +187,6 @@
     </footer>
 
     <!-- Menghapus Cache Browser setiap kali Refresh Page -->
-    <script>
-      window.addEventListener("pageshow", function () {
-        document.getElementById("prodi").selectedIndex = 0;
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

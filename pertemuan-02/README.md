@@ -16,3 +16,6 @@ Pada Pertemuan Ke-2 ini saya :
 10. Menerapkan Flexbox pada Tombol Navigasi Halaman HTML saya.
 11. Menerapkan CSS Grid di Halaman HTML.
 12. Menerapkan Desain Web Responsive di Halaman HTML saya.
+13. Mencoba JavaScript Internal.
+14. Hubungkan JavaScript Eksternal ke HTML saya.
+15. Deskripsi Perubahan yang terjadi.

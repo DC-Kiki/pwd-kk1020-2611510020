@@ -1,17 +1,33 @@
+<?php
+# Ini untuk penulisan Variabel
+$nama = "Rizqi Glory Perkasa";
+// Ini untuk penulisan konstanta
+const phi = 3.14;
+/*
+  True atau False = Tipe Data Boolean
+  null = Tanpa Isi (Ketiadaan)
+  123 = Tipe Data Angka (Int)
+  "teks" = Tipe Data String
+  3.14 = Tipe Data Desimal (Const)
+*/
+$paras = TRUE;
+
+?>
+
 <!doctype html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ini Judul Halaman ya ges ya!</title>
+  <title>Profil <?php echo $nama ?></title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header>
     <div class="header-top">
-      <h1>Akses 3 Halaman saya :</h1>
+      <h1>Profil <?php echo $nama ?></h1>
 
       <button
         class="nav-toggle"
@@ -24,8 +40,8 @@
       </button>
     </div>
 
-    <nav id="navMenu">
-      <ul>
+    <nav>
+      <ul id="navMenu">
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#contact">Kontak</a></li>
@@ -35,21 +51,24 @@
 
   <main>
     <section id="home">
-      <h2>Selamat Datang bro!</h2>
-      <p>Halaman Beranda saya</p>
-      <img src="img/foto-profil.jpg" alt="Foto Profil saya" />
+      <h2>Selamat Datang</h2>
+      <p>
+        Halo, saya <?= $nama ?>. Saya sedang mempelajari Pemrograman Web
+        Dasar dengan <?= phi ?>.
+      </p>
+
+      <img src="img/foto-profil.jpg" alt="Foto profil Nama Mahasiswa" />
     </section>
 
     <section id="about">
       <h2>Tentang Saya</h2>
+
       <article>
         <h3>Profil Singkat</h3>
-        <p>
-          Saya adalah Rizqi Glory Perkasa <br />Mahasiswa ISB Atma Luhur
-          Pangkalpinang <br />Prodi Teknik Informatika 2026
-        </p>
+        <p>Saya mahasiswa Program Studi Sistem Informasi.</p>
 
-        <h3>Target Belajar saya</h3>
+        <h3>Target Belajar</h3>
+
         <ol>
           <li>Memahami struktur HTML5.</li>
           <li>Menyusun halaman web semantik.</li>
@@ -60,14 +79,16 @@
 
     <section id="contact">
       <h2>Kontak</h2>
+
       <p>
-        Kunjungi <a href="https://github.com/DC-Kiki">Profil github saya</a>.
+        Kunjungi
+        <a href="https://github.com/DC-Kiki">profil GitHub saya</a>.
       </p>
 
-      <form id="contactForm" action="index.html" method="post">
-        <!-- Menambahkan Form Nama berbentuk Teks -->
+      <form id="contactForm" action="index.html" method="get" novalidate>
         <div class="form-group">
           <label for="nama">Nama Lengkap</label><br />
+
           <input
             class="input-form"
             type="text"
@@ -79,9 +100,9 @@
             required />
         </div>
 
-        <!-- Menambahkan Form Email -->
         <div class="form-group">
           <label for="email">Email</label><br />
+
           <input
             class="input-form"
             type="email"
@@ -91,9 +112,9 @@
             required />
         </div>
 
-        <!-- Menambahkan Form Semester berjenis Number-->
         <div class="form-group">
           <label for="semester">Semester</label><br />
+
           <input
             class="input-form"
             type="number"
@@ -104,9 +125,9 @@
             required />
         </div>
 
-        <!-- Menambahkan Form Tanggal berjenis Date -->
         <div class="form-group">
           <label for="tanggal">Tanggal Kunjungan</label><br />
+
           <input
             class="input-form"
             type="date"
@@ -115,9 +136,9 @@
             required />
         </div>
 
-        <!-- Menambahkan Form Jenis Pesan berjenis Radio -->
         <div class="form-group">
           <p>Jenis Pesan</p>
+
           <input
             type="radio"
             id="pertanyaan"
@@ -126,39 +147,33 @@
             required />
           <label for="pertanyaan">Pertanyaan</label>
 
-          <input
-            type="radio"
-            id="saran"
-            name="jenis_pesan"
-            value="saran"
-            required />
+          <input type="radio" id="saran" name="jenis_pesan" value="saran" />
           <label for="saran">Saran</label>
         </div>
 
-        <!-- Menambahkan Form Topik berjenis Checkbox -->
         <div class="form-group">
           <p>Topik yang Diminati</p>
+
           <input type="checkbox" id="minat-html" name="minat" value="HTML" />
           <label for="minat-html">HTML</label>
+
           <input type="checkbox" id="minat-css" name="minat" value="CSS" />
           <label for="minat-css">CSS</label>
         </div>
 
-        <!-- Menambahkan form Prodi berjenis Select Option -->
         <div class="form-group">
           <label for="prodi">Program Studi</label><br />
+
           <select class="input-form" id="prodi" name="prodi" required>
-            <option value="" disabled selected>
-              -- Pilih Program Studi --
-            </option>
+            <option value="">-- Pilih Program Studi --</option>
             <option value="SI">Sistem Informasi</option>
             <option value="TI">Teknik Informatika</option>
           </select>
         </div>
 
-        <!-- Menambahkan form Pesan berjenis Text Area -->
         <div class="form-group">
           <label for="pesan">Pesan</label><br />
+
           <textarea
             class="input-form"
             id="pesan"
@@ -168,18 +183,16 @@
             required></textarea>
         </div>
 
-        <!-- Tombol Submit dan Reset -->
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
+        <p id="formFeedback"></p>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026. Rizqi Glory Perkasa - 2611510020</p>
+    <p>&copy; 2026 <?php echo $nama ?> - 2611510020</p>
   </footer>
-
-  <!-- Menghapus Cache Browser setiap kali Refresh Page -->
   <script src="script.js"></script>
 </body>
 
