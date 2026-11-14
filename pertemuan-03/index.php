@@ -10,8 +10,8 @@ const phi = 3.14;
   "teks" = Tipe Data String
   3.14 = Tipe Data Desimal (Const)
 */
-$paras = TRUE;
 
+$paras = TRUE;
 ?>
 
 <!doctype html>
