@@ -18,3 +18,4 @@ Pada Pertemuan Ke-3 ini saya :
 12. Menambahkan <ol> baru serta menerapkan Perulangan While pada "Semester: (Perulangan While)".
 13. Menambahkan format tampilan IPK dengan "number_format".
 14. Menambahkan tampilan Catatan Tambahan berdasarkan nilai Null.
+15. Menerapkan Tahun Dinamis pada Footer.

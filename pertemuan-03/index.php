@@ -264,7 +264,7 @@ switch ($programStudi) {
   </main>
 
   <footer>
-    <p>&copy; 2026. Rizqi Glory Perkasa - 2611510020</p>
+    <p>&copy; <?= date("Y") ?>. <?= $namaMahasiswa; ?> - [<?= $nim ?>]</p>
   </footer>
   <script src="script.js"></script>
 </body>
