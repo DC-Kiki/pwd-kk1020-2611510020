@@ -228,6 +228,10 @@ footer p {
     grid-template-columns: 1fr 1fr;
   }
 
+  .form-feedback-error {
+    color: #ff0000;
+  }
+
   #contact {
     grid-column: 1 / -1;
   }

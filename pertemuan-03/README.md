@@ -25,3 +25,4 @@ Pada Pertemuan Ke-3 ini saya :
 19. Mengubah Form Method pada File "index.php" dari "GET" menjadi "POST".
 20. Mengubah Method Isset PHP dari "\_GET" menjadi "\_POST".
 21. Melakukan penyesuaian pembacaan Input dan Validasi Formulir.
+22. Menambahkan Pesan Error Validasi PHP.
