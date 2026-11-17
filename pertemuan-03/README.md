@@ -19,3 +19,4 @@ Pada Pertemuan Ke-3 ini saya :
 13. Menambahkan format tampilan IPK dengan "number_format".
 14. Menambahkan tampilan Catatan Tambahan berdasarkan nilai Null.
 15. Menerapkan Tahun Dinamis pada Footer.
+16. Menambahkan penggunaan parameter GET.
