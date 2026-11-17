@@ -21,3 +21,4 @@ Pada Pertemuan Ke-3 ini saya :
 15. Menerapkan Tahun Dinamis pada Footer.
 16. Menambahkan penggunaan parameter GET.
 17. Mencoba pengiriman Formulir GET.
+18. Menyalin file "index.php" dan mengubah nama file nya menjadi "indexGet.php".
