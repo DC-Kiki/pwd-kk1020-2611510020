@@ -5,7 +5,7 @@ $namaMahasiswa = "Rizqi Glory Perkasa";
 $programStudi = "TI";
 $tahunAkademik = "2026/2027";
 $semester = 1;
-$ipk = null;
+$ipk = 3.97;
 $statusAktif = true;
 $catatanTambahan = null;
 
@@ -96,6 +96,7 @@ switch ($programStudi) {
         <p>Semester: <?= $semester . " (" . $keteranganSemester . ")"; ?></p>
         <p>Sisa semester hingga batas: <?= $sisaSemester; ?></p>
         <p>Pemeriksaan rentang semester: <?= $statusSemester; ?></p>
+        <p>IPK: <?php echo number_format($ipk, 2, ',', '.'); ?></p>
         <p>
           Saya adalah Rizqi Glory Perkasa <br />Mahasiswa ISB Atma Luhur
           Pangkalpinang <br />Prodi Teknik Informatika 2026
