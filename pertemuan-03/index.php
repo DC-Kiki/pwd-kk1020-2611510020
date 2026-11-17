@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $semesterForm,
       FILTER_VALIDATE_INT
     );
+
     if (
       $semesterValid === false ||
       $semesterValid < 1 ||
@@ -62,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $pesanKesalahan .= 'Semester harus berupa bilangan bulat antara 1 dan 14. ';
     }
   }
+
   if (trim($email) !== '') {
     if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
       $pesanKesalahan .= 'Format email tidak valid. ';
@@ -72,10 +74,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (!in_array($jenisPesan, ['pertanyaan', 'saran'], true)) {
     $pesanKesalahan .= 'Jenis pesan tidak valid. ';
   }
+
   if (!in_array($prodi, ['SI', 'TI'], true)) {
     $pesanKesalahan .= 'Program studi tidak valid. ';
   }
+
   $minatDiizinkan = ['HTML', 'CSS'];
+
   if (!is_array($minat)) {
     $pesanKesalahan .= 'Format pilihan topik tidak valid. ';
   } else {
@@ -87,7 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   }
 }
-
 
 // Bagian 1: Variabel dan Konstanta
 $nim = "2611510020";
@@ -108,6 +112,7 @@ $sisaSemester = $batasSemester - $semester;
 $semesterValid = $semester >= 1 && $semester <= $batasSemester;
 $statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
 
+// Bagian 3: Percabangan if-elseif-else
 if ($semester < 3) {
   $keteranganSemester = "Semester awal";
 } elseif ($semester <= 6) {
@@ -124,9 +129,11 @@ switch ($programStudi) {
   case "SI":
     $fokusProgramStudi = "Sistem Informasi dan Proses Bisnis";
     break;
+
   case "TI":
     $fokusProgramStudi = "Komputasi dan Pengembangan Perangkat Lunak";
     break;
+
   default:
     $fokusProgramStudi = "Belum ditentukan";
 }
@@ -155,7 +162,6 @@ $jenisPesan = $_SESSION['jenis_pesan'] ?? '';
 $prodi = $_SESSION['prodi'] ?? '';
 $minat = $_SESSION['minat'] ?? '';
 $pesan = $_SESSION['pesan'] ?? '';
-
 
 ?>
 <!doctype html>
@@ -191,6 +197,13 @@ $pesan = $_SESSION['pesan'] ?? '';
         <li><a href="#contact">Kontak</a></li>
       </ul>
     </nav>
+
+    <nav id="logoutButton">
+      <ul>
+        <li><a href="logout.php">Hapus Sesi</a></li>
+      </ul>
+    </nav>
+
   </header>
 
   <main>
@@ -222,7 +235,7 @@ $pesan = $_SESSION['pesan'] ?? '';
         <h3>Target Belajar saya: (Perulangan For)</h3>
         <ol>
           <?php
-          // Perulangan for tanpa array; materi larik dibahas pada P9.
+          // Perulangan for tanpa array; materi larik dibahas pada Pertemuan lain.
           for ($i = 1; $i <= 5; $i++) {
             echo "<li>Target belajar ke-" . $i . ": ";
             switch ($i) {

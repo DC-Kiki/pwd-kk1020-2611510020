@@ -28,3 +28,4 @@ Pada Pertemuan Ke-3 ini saya :
 22. Menambahkan Pesan Error Validasi PHP.
 23. Melakukan Pengamanan pada Output Data Formulir.
 24. Menambahkan Session dan menerapkan Pola PRG.
+25. Menambahkan Tombol "Hapus Sesi" beserta fungsinya.

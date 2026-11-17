@@ -5,13 +5,15 @@ window.addEventListener("pageshow", function () {
 // Utama
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
+const logoutButton = document.getElementById("logoutButton");
 
 navToggle.addEventListener("click", () => {
-  const isOpen = navMenu.classList.toggle("nav-open");
+  const openOne = navMenu.classList.toggle("nav-open");
+  const openTwo = logoutButton.classList.toggle("nav-open");
 
-  navToggle.setAttribute("aria-expanded", isOpen);
+  navToggle.setAttribute("aria-expanded", openOne && openTwo);
 
-  if (isOpen) {
+  if (openOne && openTwo) {
     navToggle.setAttribute("aria-label", "Tutup navigasi");
   } else {
     navToggle.setAttribute("aria-label", "Buka navigasi");
