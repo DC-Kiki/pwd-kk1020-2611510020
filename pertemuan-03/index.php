@@ -1,60 +1,29 @@
 <?php
-# Ini untuk penulisan Variabel
-$nama = "Rizqi Glory Perkasa";
-// Ini untuk penulisan konstanta
-const phi = 3.14;
-/*
-  True atau False = Tipe Data Boolean
-  null = Tanpa Isi (Ketiadaan)
-  123 = Tipe Data Angka (Int)
-  "teks" = Tipe Data String
-  3.14 = Tipe Data Desimal (Const)
-*/
-
-$paras = true;
+// Bagian 1: Variabel dan Konstanta
+$nim = "2611510020";
+$namaMahasiswa = "Rizqi Glory Perkasa";
+$programStudi = "TI";
+$tahunAkademik = "2026/2027";
 $semester = 1;
-
-switch ($semester) {
-  case 1:
-    $semesterku = "Satu";
-    break;
-
-  case 2:
-    $semesterku = "Dua";
-    break;
-
-  case 3:
-    $semesterku = "Tiga";
-    break;
-
-  case 4:
-    $semesterku = "Empat";
-    break;
-
-  case 5:
-    $semesterku = "Lima";
-    break;
-
-  default:
-    $semesterku = "Tes";
-    break;
-}
+$ipk = null;
+$statusAktif = true;
+$catatanTambahan = null;
 ?>
 
 <!doctype html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profil <?php echo $nama ?></title>
+  <title>Ini Judul Halaman ya ges ya!</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header>
     <div class="header-top">
-      <h1>Profil <?php echo $nama ?></h1>
+      <h1>Akses 3 Halaman saya</h1>
 
       <button
         class="nav-toggle"
@@ -67,8 +36,8 @@ switch ($semester) {
       </button>
     </div>
 
-    <nav>
-      <ul id="navMenu">
+    <nav id="navMenu">
+      <ul>
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#contact">Kontak</a></li>
@@ -78,30 +47,21 @@ switch ($semester) {
 
   <main>
     <section id="home">
-      <h2>Selamat Datang</h2>
-      <p>
-        Halo, saya <?= $nama ?>. Saya sedang mempelajari Pemrograman Web
-        Dasar dengan <?= phi ?>.
-      </p>
-
-      <img src="img/foto-profil.jpg" alt="Foto profil Nama Mahasiswa" />
+      <h2>Selamat Datang bro!</h2>
+      <p>Halaman Beranda saya</p>
+      <img src="img/foto-profil.jpg" alt="Foto Profil saya" />
     </section>
 
     <section id="about">
       <h2>Tentang Saya</h2>
-
       <article>
         <h3>Profil Singkat</h3>
-        <p>Saya mahasiswa Program Studi Sistem Informasi.</p>
-        <?php
-        if ($paras == 1):
-          echo "<p>Saya berwajah tampan (Calon Perwira).</p>";
-        endif;
-        ?>
-        <p>Semester <?php echo $semester ?> (<?= $semesterku ?>)</p>
+        <p>
+          Saya adalah Rizqi Glory Perkasa <br />Mahasiswa ISB Atma Luhur
+          Pangkalpinang <br />Prodi Teknik Informatika 2026
+        </p>
 
-        <h3>Target Belajar</h3>
-
+        <h3>Target Belajar saya</h3>
         <ol>
           <li>Memahami struktur HTML5.</li>
           <li>Menyusun halaman web semantik.</li>
@@ -112,16 +72,14 @@ switch ($semester) {
 
     <section id="contact">
       <h2>Kontak</h2>
-
       <p>
-        Kunjungi
-        <a href="https://github.com/DC-Kiki">profil GitHub saya</a>.
+        Kunjungi <a href="https://github.com/DC-Kiki">Profil github saya</a>.
       </p>
 
-      <form id="contactForm" action="index.html" method="get" novalidate>
+      <form id="contactForm" action="index.php" method="post" novalidate>
+        <!-- Menambahkan Form Nama berbentuk Teks -->
         <div class="form-group">
           <label for="nama">Nama Lengkap</label><br />
-
           <input
             class="input-form"
             type="text"
@@ -133,9 +91,9 @@ switch ($semester) {
             required />
         </div>
 
+        <!-- Menambahkan Form Email -->
         <div class="form-group">
           <label for="email">Email</label><br />
-
           <input
             class="input-form"
             type="email"
@@ -145,9 +103,9 @@ switch ($semester) {
             required />
         </div>
 
+        <!-- Menambahkan Form Semester berjenis Number-->
         <div class="form-group">
           <label for="semester">Semester</label><br />
-
           <input
             class="input-form"
             type="number"
@@ -158,9 +116,9 @@ switch ($semester) {
             required />
         </div>
 
+        <!-- Menambahkan Form Tanggal berjenis Date -->
         <div class="form-group">
           <label for="tanggal">Tanggal Kunjungan</label><br />
-
           <input
             class="input-form"
             type="date"
@@ -169,9 +127,9 @@ switch ($semester) {
             required />
         </div>
 
+        <!-- Menambahkan Form Jenis Pesan berjenis Radio -->
         <div class="form-group">
           <p>Jenis Pesan</p>
-
           <input
             type="radio"
             id="pertanyaan"
@@ -180,33 +138,39 @@ switch ($semester) {
             required />
           <label for="pertanyaan">Pertanyaan</label>
 
-          <input type="radio" id="saran" name="jenis_pesan" value="saran" />
+          <input
+            type="radio"
+            id="saran"
+            name="jenis_pesan"
+            value="saran"
+            required />
           <label for="saran">Saran</label>
         </div>
 
+        <!-- Menambahkan Form Topik berjenis Checkbox -->
         <div class="form-group">
           <p>Topik yang Diminati</p>
-
           <input type="checkbox" id="minat-html" name="minat" value="HTML" />
           <label for="minat-html">HTML</label>
-
           <input type="checkbox" id="minat-css" name="minat" value="CSS" />
           <label for="minat-css">CSS</label>
         </div>
 
+        <!-- Menambahkan form Prodi berjenis Select Option -->
         <div class="form-group">
           <label for="prodi">Program Studi</label><br />
-
           <select class="input-form" id="prodi" name="prodi" required>
-            <option value="">-- Pilih Program Studi --</option>
+            <option value="" disabled selected>
+              -- Pilih Program Studi --
+            </option>
             <option value="SI">Sistem Informasi</option>
             <option value="TI">Teknik Informatika</option>
           </select>
         </div>
 
+        <!-- Menambahkan form Pesan berjenis Text Area -->
         <div class="form-group">
           <label for="pesan">Pesan</label><br />
-
           <textarea
             class="input-form"
             id="pesan"
@@ -216,6 +180,7 @@ switch ($semester) {
             required></textarea>
         </div>
 
+        <!-- Tombol Submit dan Reset -->
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
         <p id="formFeedback"></p>
@@ -224,7 +189,7 @@ switch ($semester) {
   </main>
 
   <footer>
-    <p>&copy; 2026 <?php echo $nama ?> - 2611510020</p>
+    <p>&copy; 2026. Rizqi Glory Perkasa - 2611510020</p>
   </footer>
   <script src="script.js"></script>
 </body>

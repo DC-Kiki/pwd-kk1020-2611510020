@@ -10,7 +10,7 @@
   <body>
     <header>
       <div class="header-top">
-        <h1>Akses 3 Halaman saya :</h1>
+        <h1>Akses 3 Halaman saya</h1>
 
         <button
           class="nav-toggle"
@@ -64,7 +64,7 @@
           Kunjungi <a href="https://github.com/DC-Kiki">Profil github saya</a>.
         </p>
 
-        <form id="contactForm" action="index.html" method="post">
+        <form id="contactForm" action="index.html" method="post" novalidate>
           <!-- Menambahkan Form Nama berbentuk Teks -->
           <div class="form-group">
             <label for="nama">Nama Lengkap</label><br />
@@ -178,6 +178,7 @@
           <!-- Tombol Submit dan Reset -->
           <button type="submit">Kirim</button>
           <button type="reset">Batal</button>
+          <p id="formFeedback"></p>
         </form>
       </section>
     </main>
@@ -185,8 +186,6 @@
     <footer>
       <p>&copy; 2026. Rizqi Glory Perkasa - 2611510020</p>
     </footer>
-
-    <!-- Menghapus Cache Browser setiap kali Refresh Page -->
     <script src="script.js"></script>
   </body>
 </html>

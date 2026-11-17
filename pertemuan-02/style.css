@@ -16,6 +16,30 @@ header h1 {
   font-size: 28px;
 }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#navMenu {
+  display: none;
+}
+#navMenu.nav-open {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+.nav-toggle {
+  display: block;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Navigasi */
 nav ul {
   display: flex;
   flex-direction: column;
@@ -33,6 +57,7 @@ nav a {
   text-decoration: none;
 }
 
+/* Layout Utama */
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -43,7 +68,6 @@ section {
   width: 100%;
 }
 
-/* Body */
 body {
   margin: 0;
   padding: 12px;
@@ -52,6 +76,7 @@ body {
   background-color: #eef2f7;
 }
 
+/* Bagian Home */
 #home {
   background-color: #ffffff;
   border: 1px solid #d0d7de;
@@ -78,6 +103,7 @@ body {
   border: 1px solid #cbd5e1;
 }
 
+/* Bagian Tentang */
 #about {
   background-color: #ffffff;
   border: 1px solid #d0d7de;
@@ -113,6 +139,7 @@ body {
   border: 1px solid #e6e6e6;
 }
 
+/* Bagian Kontak */
 #contact {
   background-color: #f8fafc;
   border: 1px solid #cbd5e1;
@@ -166,6 +193,10 @@ body {
   border: 1px solid #003366;
 }
 
+#formFeedback {
+  color: #ff0000;
+}
+
 /* Footer */
 footer {
   background-color: #003366;
@@ -182,8 +213,8 @@ footer p {
 
 @media (min-width: 768px) {
   /* aturan CSS untuk viewport dengan lebar minimal 768px */
-  main {
-    grid-template-columns: 1fr 1fr;
+  nav {
+    margin-top: 16px;
   }
 
   nav ul {
@@ -193,7 +224,19 @@ footer p {
     gap: 16px;
   }
 
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
   #contact {
     grid-column: 1 / -1;
+  }
+
+  #navMenu {
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-toggle {
+    display: none;
   }
 }
