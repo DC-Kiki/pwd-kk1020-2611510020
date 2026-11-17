@@ -157,7 +157,7 @@ switch ($programStudi) {
         Kunjungi <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">Profil github saya</a>.
       </p>
 
-      <form id="contactForm" action="index.php" method="get" novalidate>
+      <form id="contactForm" action="index.php" method="post" novalidate>
         <!-- Menambahkan Form Nama berbentuk Teks -->
         <div class="form-group">
           <label for="nama">Nama Lengkap</label><br />
