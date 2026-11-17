@@ -97,6 +97,7 @@ switch ($programStudi) {
         <p>Sisa semester hingga batas: <?= $sisaSemester; ?></p>
         <p>Pemeriksaan rentang semester: <?= $statusSemester; ?></p>
         <p>IPK: <?php echo number_format($ipk, 2, ',', '.'); ?></p>
+        <p>Catatan tambahan: <?php echo $catatanTambahan === null ? "Belum ada (Nihil)" : $catatanTambahan; ?></p>
         <p>
           Saya adalah Rizqi Glory Perkasa <br />Mahasiswa ISB Atma Luhur
           Pangkalpinang <br />Prodi Teknik Informatika 2026
