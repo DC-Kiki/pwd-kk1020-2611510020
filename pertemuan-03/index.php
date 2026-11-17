@@ -15,6 +15,9 @@ const PROFIL_GITHUB = "dc-kiki";
 // Bagian 2: Operator
 $batasSemester = 8;
 $sisaSemester = $batasSemester - $semester;
+$semesterValid = $semester >= 1 && $semester <= $batasSemester;
+$statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -65,6 +68,7 @@ $sisaSemester = $batasSemester - $semester;
       <article>
         <h3>Profil Singkat</h3>
         <p>Sisa semester hingga batas: <?= $sisaSemester; ?></p>
+        <p>Pemeriksaan rentang semester: <?= $statusSemester; ?></p>
         <p>
           Saya adalah Rizqi Glory Perkasa <br />Mahasiswa ISB Atma Luhur
           Pangkalpinang <br />Prodi Teknik Informatika 2026
