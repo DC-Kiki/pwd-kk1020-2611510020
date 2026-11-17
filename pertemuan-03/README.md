@@ -23,3 +23,4 @@ Pada Pertemuan Ke-3 ini saya :
 17. Mencoba pengiriman Formulir GET.
 18. Menyalin file "index.php" dan mengubah nama file nya menjadi "indexGet.php".
 19. Mengubah Form Method pada File "index.php" dari "GET" menjadi "POST".
+20. Mengubah Method Isset PHP dari "\_GET" menjadi "\_POST".
