@@ -4,7 +4,7 @@ $nim = "2611510020";
 $namaMahasiswa = "Rizqi Glory Perkasa";
 $programStudi = "TI";
 $tahunAkademik = "2026/2027";
-$semester = 7;
+$semester = 1;
 $ipk = null;
 $statusAktif = true;
 $catatanTambahan = null;
@@ -28,6 +28,18 @@ if ($semester < 3) {
 
 $namaProdi = ($programStudi == "SI") ? "Sistem Informasi" : (($programStudi == "TI") ? "Teknik
 Informatika" : "Lainnya");
+
+// Bagian 4: Percabangan switch-case-default
+switch ($programStudi) {
+  case "SI":
+    $fokusProgramStudi = "Sistem Informasi dan Proses Bisnis";
+    break;
+  case "TI":
+    $fokusProgramStudi = "Komputasi dan Pengembangan Perangkat Lunak";
+    break;
+  default:
+    $fokusProgramStudi = "Belum ditentukan";
+}
 
 ?>
 <!doctype html>
@@ -79,8 +91,9 @@ Informatika" : "Lainnya");
       <article>
         <h3>Profil Singkat</h3>
         <p>Program Studi: <?php echo $namaProdi . " (" . $programStudi . ")"; ?></p>
-        <p>Semester: <?= $semester . " (" . $keteranganSemester . ")"; ?></p>
+        <p>Fokus program studi: <?php echo $fokusProgramStudi; ?></p>
         <p>Status mahasiswa: <?php echo $statusAktif ? "Aktif" : "Tidak aktif"; ?></p>
+        <p>Semester: <?= $semester . " (" . $keteranganSemester . ")"; ?></p>
         <p>Sisa semester hingga batas: <?= $sisaSemester; ?></p>
         <p>Pemeriksaan rentang semester: <?= $statusSemester; ?></p>
         <p>

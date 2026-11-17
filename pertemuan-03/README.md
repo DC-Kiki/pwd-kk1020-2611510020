@@ -13,3 +13,4 @@ Pada Pertemuan Ke-3 ini saya :
 7.  Menerapkan Pemeriksaan Rentang Semester.
 8.  Menambahkan Percabangan If..Elseif..Else pada Source Code saya.
 9.  Menerapkan Operator Ternary pada Profil saya.
+10. Menambahkan Percabangan Switch..Case.
