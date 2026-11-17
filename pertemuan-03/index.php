@@ -86,7 +86,7 @@ switch ($programStudi) {
   <main>
     <section id="home">
       <h2>Selamat Datang bro!</h2>
-      <p>Halo bro, saya adalah <strong><?= $namaMahasiswa; ?></strong>Saya sedang mempelajari matakuliah
+      <p>Halo bro, saya adalah <strong><?= $namaMahasiswa; ?></strong>. Saya sedang mempelajari matakuliah
         <strong><?php print NAMA_MATA_KULIAH; ?></strong> pada tahun akademik <?= $tahunAkademik; ?>.
       </p>
       <img src="img/foto-profil.jpg" alt="Foto Profil saya" />

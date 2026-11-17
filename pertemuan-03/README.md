@@ -20,3 +20,4 @@ Pada Pertemuan Ke-3 ini saya :
 14. Menambahkan tampilan Catatan Tambahan berdasarkan nilai Null.
 15. Menerapkan Tahun Dinamis pada Footer.
 16. Menambahkan penggunaan parameter GET.
+17. Mencoba pengiriman Formulir GET.
