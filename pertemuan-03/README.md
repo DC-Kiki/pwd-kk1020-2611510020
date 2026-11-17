@@ -27,3 +27,4 @@ Pada Pertemuan Ke-3 ini saya :
 21. Melakukan penyesuaian pembacaan Input dan Validasi Formulir.
 22. Menambahkan Pesan Error Validasi PHP.
 23. Melakukan Pengamanan pada Output Data Formulir.
+24. Menambahkan Session dan menerapkan Pola PRG.
