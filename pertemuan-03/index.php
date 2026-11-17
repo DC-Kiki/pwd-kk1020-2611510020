@@ -50,7 +50,9 @@ const PROFIL_GITHUB = "dc-kiki";
   <main>
     <section id="home">
       <h2>Selamat Datang bro!</h2>
-      <p>Halaman Beranda saya</p>
+      <p>Halo bro, saya adalah <strong><?= $namaMahasiswa; ?></strong>Saya sedang mempelajari matakuliah
+        <strong><?php print NAMA_MATA_KULIAH; ?></strong> pada tahun akademik <?= $tahunAkademik; ?>.
+      </p>
       <img src="img/foto-profil.jpg" alt="Foto Profil saya" />
     </section>
 
@@ -75,7 +77,7 @@ const PROFIL_GITHUB = "dc-kiki";
     <section id="contact">
       <h2>Kontak</h2>
       <p>
-        Kunjungi <a href="https://github.com/DC-Kiki">Profil github saya</a>.
+        Kunjungi <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">Profil github saya</a>.
       </p>
 
       <form id="contactForm" action="index.php" method="post" novalidate>
