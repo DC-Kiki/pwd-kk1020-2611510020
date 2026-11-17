@@ -26,3 +26,4 @@ Pada Pertemuan Ke-3 ini saya :
 20. Mengubah Method Isset PHP dari "\_GET" menjadi "\_POST".
 21. Melakukan penyesuaian pembacaan Input dan Validasi Formulir.
 22. Menambahkan Pesan Error Validasi PHP.
+23. Melakukan Pengamanan pada Output Data Formulir.
