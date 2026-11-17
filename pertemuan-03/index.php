@@ -26,6 +26,9 @@ if ($semester < 3) {
   $keteranganSemester = "Semester akhir";
 }
 
+$namaProdi = ($programStudi == "SI") ? "Sistem Informasi" : (($programStudi == "TI") ? "Teknik
+Informatika" : "Lainnya");
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -75,9 +78,11 @@ if ($semester < 3) {
       <h2>Tentang Saya</h2>
       <article>
         <h3>Profil Singkat</h3>
+        <p>Program Studi: <?php echo $namaProdi . " (" . $programStudi . ")"; ?></p>
+        <p>Semester: <?= $semester . " (" . $keteranganSemester . ")"; ?></p>
+        <p>Status mahasiswa: <?php echo $statusAktif ? "Aktif" : "Tidak aktif"; ?></p>
         <p>Sisa semester hingga batas: <?= $sisaSemester; ?></p>
         <p>Pemeriksaan rentang semester: <?= $statusSemester; ?></p>
-        <p>Semester: <?= $semester . " (" . $keteranganSemester . ")"; ?></p>
         <p>
           Saya adalah Rizqi Glory Perkasa <br />Mahasiswa ISB Atma Luhur
           Pangkalpinang <br />Prodi Teknik Informatika 2026
