@@ -11,6 +11,10 @@ $catatanTambahan = null;
 
 const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
 const PROFIL_GITHUB = "dc-kiki";
+
+// Bagian 2: Operator
+$batasSemester = 8;
+$sisaSemester = $batasSemester - $semester;
 ?>
 <!doctype html>
 <html lang="en">
@@ -60,6 +64,7 @@ const PROFIL_GITHUB = "dc-kiki";
       <h2>Tentang Saya</h2>
       <article>
         <h3>Profil Singkat</h3>
+        <p>Sisa semester hingga batas: <?= $sisaSemester; ?></p>
         <p>
           Saya adalah Rizqi Glory Perkasa <br />Mahasiswa ISB Atma Luhur
           Pangkalpinang <br />Prodi Teknik Informatika 2026
