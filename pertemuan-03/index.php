@@ -4,7 +4,7 @@ $nim = "2611510020";
 $namaMahasiswa = "Rizqi Glory Perkasa";
 $programStudi = "TI";
 $tahunAkademik = "2026/2027";
-$semester = 1;
+$semester = 7;
 $ipk = null;
 $statusAktif = true;
 $catatanTambahan = null;
@@ -17,6 +17,14 @@ $batasSemester = 8;
 $sisaSemester = $batasSemester - $semester;
 $semesterValid = $semester >= 1 && $semester <= $batasSemester;
 $statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
+
+if ($semester < 3) {
+  $keteranganSemester = "Semester awal";
+} elseif ($semester <= 6) {
+  $keteranganSemester = "Semester menengah";
+} else {
+  $keteranganSemester = "Semester akhir";
+}
 
 ?>
 <!doctype html>
@@ -69,6 +77,7 @@ $statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu d
         <h3>Profil Singkat</h3>
         <p>Sisa semester hingga batas: <?= $sisaSemester; ?></p>
         <p>Pemeriksaan rentang semester: <?= $statusSemester; ?></p>
+        <p>Semester: <?= $semester . " (" . $keteranganSemester . ")"; ?></p>
         <p>
           Saya adalah Rizqi Glory Perkasa <br />Mahasiswa ISB Atma Luhur
           Pangkalpinang <br />Prodi Teknik Informatika 2026
