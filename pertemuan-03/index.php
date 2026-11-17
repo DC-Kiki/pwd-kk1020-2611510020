@@ -8,8 +8,10 @@ $semester = 1;
 $ipk = null;
 $statusAktif = true;
 $catatanTambahan = null;
-?>
 
+const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
+const PROFIL_GITHUB = "dc-kiki";
+?>
 <!doctype html>
 <html lang="en">
 
