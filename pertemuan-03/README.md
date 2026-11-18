@@ -15,7 +15,7 @@ Pada Pertemuan Ke-3 ini saya :
 9.  Menerapkan Operator Ternary pada Profil saya.
 10. Menambahkan Percabangan Switch..Case.
 11. Menambahkan Perulangan For pada "Target Belajar Saya".
-12. Menambahkan <ol> baru serta menerapkan Perulangan While pada "Semester: (Perulangan While)".
+12. Menambahkan Ordered List serta menerapkan Perulangan While pada "Semester:(Perulangan While)".
 13. Menambahkan format tampilan IPK dengan "number_format".
 14. Menambahkan tampilan Catatan Tambahan berdasarkan nilai Null.
 15. Menerapkan Tahun Dinamis pada Footer.
