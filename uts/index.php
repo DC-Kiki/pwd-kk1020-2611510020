@@ -28,8 +28,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$_SESSION["pesan"] = $pesan;
 
 	// PRG: mencegah pengiriman POST berulang ketika halaman dimuat ulang.
-	header("Location: index.php#contact");
-	exit;
+	// header("Location: index.php#contact");
+	// exit;
+}
+
+// Proses data formulir Senimar
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+	$mahasiswa = trim((string) ($_POST["mahasiswa"] ?? ""));
+	$nim = trim((string) ($_POST["nim"] ?? ""));
+	$studi = trim((string) ($_POST["studi"] ?? ""));
+	$pilihan = trim((string) ($_POST["pilihan"] ?? ""));
+	$alasan = trim((string) ($_POST["alasan"] ?? ""));
+
+	// Menyimpan setiap nilai formulir ke dalam session secara terpisah.
+	$_SESSION["mahasiswa"] = $mahasiswa;
+	$_SESSION["nim"] = $nim;
+	$_SESSION["studi"] = $studi;
+	$_SESSION["pilihan"] = $pilihan;
+	$_SESSION["alasan"] = $alasan;
+
+	// PRG: mencegah pengiriman POST berulang ketika halaman dimuat ulang.
+	// header("Location: index.php#seminar");
+	// exit;
 }
 
 // Mengamankan data sebelum ditampilkan kembali ke halaman HTML.
@@ -108,6 +128,12 @@ switch ($programStudi) {
 				<li><a href="#about">Tentang</a></li>
 				<li><a href="#contact">Kontak</a></li>
 				<li><a href="#seminar">Pendaftaran Seminar</a></li>
+			</ul>
+		</nav>
+
+		<nav id="logoutButton">
+			<ul>
+				<li><a href="logout.php">Hapus Sesi</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -262,6 +288,22 @@ switch ($programStudi) {
 				<button type="reset">Batal</button>
 				<p class="form-feedback" data-form-feedback aria-live="polite"></p>
 			</form>
+
+			<?php if (isset($_SESSION["nama"])): ?>
+				<article id="hasilKontak" class="submission-result" aria-live="polite">
+					<h3>Data Formulir yang Dikirim</h3>
+					<p><strong>Nama Lengkap:</strong> <?= htmlspecialchars($_SESSION["nama"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Email:</strong> <?= htmlspecialchars($_SESSION["email"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Semester:</strong> <?= htmlspecialchars($_SESSION["semester"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Tanggal Kunjungan:</strong> <?= htmlspecialchars($_SESSION["tanggal"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Jenis Pesan:</strong> <?= htmlspecialchars($_SESSION["jenis_pesan"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Topik yang Diminati:</strong>
+						<?= htmlspecialchars(implode(", ", $_SESSION["minat"] ?? []), ENT_QUOTES, "UTF-8") ?>
+					</p>
+					<p><strong>Program Studi:</strong> <?= htmlspecialchars($_SESSION["prodi"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Pesan:</strong> <?= nl2br(htmlspecialchars($_SESSION["pesan"] ?? "", ENT_QUOTES, "UTF-8")) ?></p>
+				</article>
+			<?php endif; ?>
 		</section>
 
 		<section id="seminar">
@@ -303,10 +345,10 @@ switch ($programStudi) {
 
 					<select class="input-form" id="pilihan" name="pilihan" required>
 						<option value="" disabled>-- Pilih Seminar --</option>
-						<option value="AI">Artificial Intelligence</option>
-						<option value="WD">Web Development</option>
-						<option value="CS">Cyber Security</option>
-						<option value="DA">Data Analytics</option>
+						<option value="AI">Artificial Intelligence (AI)</option>
+						<option value="WD">Web Development (WD)</option>
+						<option value="CS">Cyber Security (CS)</option>
+						<option value="DA">Data Analytics (DA)</option>
 					</select>
 				</div>
 
@@ -326,6 +368,18 @@ switch ($programStudi) {
 				<button type="reset">Batal</button>
 				<p class="form-feedback" data-form-feedback aria-live="polite"></p>
 			</form>
+
+			<?php if (isset($_SESSION["mahasiswa"])): ?>
+				<article id="hasilSeminar" class="submission-result" aria-live="polite">
+					<h3>Data Formulir yang Dikirim</h3>
+					<p><strong>Nama Mahasiswa:</strong> <?= htmlspecialchars($_SESSION["mahasiswa"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>NIM Mahasiswa:</strong> <?= htmlspecialchars($_SESSION["nim"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Program Studi:</strong> <?= htmlspecialchars($_SESSION["studi"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Pilihan Seminar:</strong> <?= htmlspecialchars($_SESSION["pilihan"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Alasan mengikuti Seminar:</strong> <?= nl2br(htmlspecialchars($_SESSION["alasan"] ?? "", ENT_QUOTES, "UTF-8")) ?></p>
+				</article>
+			<?php endif; ?>
+
 		</section>
 
 	</main>

@@ -1,17 +1,20 @@
 // Navigasi responsif.
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
+const logoutButton = document.getElementById("logoutButton");
 
-if (navToggle && navMenu) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = navMenu.classList.toggle("nav-open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-    navToggle.setAttribute(
-      "aria-label",
-      isOpen ? "Tutup navigasi" : "Buka navigasi",
-    );
-  });
-}
+navToggle.addEventListener("click", () => {
+  const openOne = navMenu.classList.toggle("nav-open");
+  const openTwo = logoutButton.classList.toggle("nav-open");
+
+  navToggle.setAttribute("aria-expanded", openOne && openTwo);
+
+  if (openOne && openTwo) {
+    navToggle.setAttribute("aria-label", "Tutup navigasi");
+  } else {
+    navToggle.setAttribute("aria-label", "Buka navigasi");
+  }
+});
 
 // Validasi formulir Kontak.
 // Selector menggunakan atribut/class, bukan ID formulir tertentu,
@@ -120,6 +123,91 @@ contactForms.forEach((contactForm) => {
   });
 
   contactForm.addEventListener("input", () => {
+    if (formFeedback) {
+      formFeedback.textContent = "";
+      formFeedback.className = "form-feedback";
+    }
+  });
+});
+
+// LOGIKA JS FORM SEMINAR
+const seminarForms = document.querySelectorAll(
+  'form[data-validation="seminar"]',
+);
+
+seminarForms.forEach((seminarForm) => {
+  const formFeedback = seminarForm.querySelector("[data-form-feedback]");
+
+  const ambilInput = (mahasiswa) => seminarForm.elements.namedItem(mahasiswa);
+
+  seminarForm.addEventListener("submit", (event) => {
+    // Mencegah pengiriman otomatis sebelum seluruh validasi selesai.
+    event.preventDefault();
+
+    const mahasiswaInput = ambilInput("mahasiswa");
+    const nimInput = ambilInput("nim");
+    const studiInput = ambilInput("studi");
+    const pilihanInput = ambilInput("pilihan");
+    const alasanInput = ambilInput("alasan");
+
+    const mahasiswa = mahasiswaInput.value.trim();
+    const nim = Number(nimInput.value);
+    const studi = studiInput.value;
+    const pilihan = pilihanInput.value;
+    const alasan = alasanInput.value.trim();
+
+    const tampilkanKesalahan = (pesanKesalahan) => {
+      if (formFeedback) {
+        formFeedback.textContent = pesanKesalahan;
+        formFeedback.className = "form-feedback-error";
+      }
+    };
+
+    if (formFeedback) {
+      formFeedback.textContent = "";
+      formFeedback.className = "form-feedback";
+    }
+
+    if (mahasiswa.length < 3 || mahasiswa.length > 50) {
+      tampilkanKesalahan("Nama lengkap harus diisi 3 sampai 50 karakter.");
+      return;
+    }
+
+    if (nimInput.value.trim() === "" || !Number.isInteger(nim)) {
+      tampilkanKesalahan("NIM wajib diisi.");
+      return;
+    }
+
+    if (studi === "") {
+      tampilkanKesalahan("Program Studi wajib dipilih.");
+      return;
+    }
+
+    if (pilihan === "") {
+      tampilkanKesalahan("Seminar wajib dipilih.");
+      return;
+    }
+
+    if (alasan.length === 0 || alasan.length > 300) {
+      tampilkanKesalahan(
+        "Alasan mengikuti Seminar harus diisi dan maksimal 300 karakter.",
+      );
+      return;
+    }
+
+    // Mengirim formulir setelah seluruh validasi JavaScript berhasil.
+    // HTMLFormElement.submit() tidak memicu event submit kembali.
+    seminarForm.submit();
+  });
+
+  seminarForm.addEventListener("reset", () => {
+    if (formFeedback) {
+      formFeedback.textContent = "";
+      formFeedback.className = "form-feedback";
+    }
+  });
+
+  seminarForm.addEventListener("input", () => {
     if (formFeedback) {
       formFeedback.textContent = "";
       formFeedback.className = "form-feedback";
