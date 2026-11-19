@@ -159,6 +159,44 @@ section {
   margin-bottom: 16px;
 }
 
+/* Bagian Seminar */
+#seminar {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 20px;
+  margin: 0;
+}
+
+#seminar h2 {
+  color: #003366;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 6px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+#seminar label {
+  color: #1f2937;
+  font-weight: bold;
+}
+
+#seminar textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+#seminar button {
+  background-color: #003366;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 14px;
+  margin: 8px 6px 0 0;
+  border: 1px solid #003366;
+  cursor: pointer;
+}
+
+/* Akhir Seminar */
+
 .form-group {
   margin: 12px 0;
 }
@@ -237,6 +275,13 @@ footer p {
   #contact {
     grid-column: 1 / -1;
   }
+
+  /* Bagian Seminar */
+  #seminar {
+    grid-column: 1 / -1;
+  }
+
+  /* Akhir Seminar */
 
   #navMenu {
     display: flex;

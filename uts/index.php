@@ -262,23 +262,72 @@ switch ($programStudi) {
 				<button type="reset">Batal</button>
 				<p class="form-feedback" data-form-feedback aria-live="polite"></p>
 			</form>
-
-			<?php if (isset($_SESSION["nama"])): ?>
-				<article id="hasilKontak" class="submission-result" aria-live="polite">
-					<h3>Data Formulir yang Dikirim</h3>
-					<p><strong>Nama Lengkap:</strong> <?= htmlspecialchars($_SESSION["nama"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Email:</strong> <?= htmlspecialchars($_SESSION["email"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Semester:</strong> <?= htmlspecialchars($_SESSION["semester"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Tanggal Kunjungan:</strong> <?= htmlspecialchars($_SESSION["tanggal"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Jenis Pesan:</strong> <?= htmlspecialchars($_SESSION["jenis_pesan"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Topik yang Diminati:</strong>
-						<?= htmlspecialchars(implode(", ", $_SESSION["minat"] ?? []), ENT_QUOTES, "UTF-8") ?>
-					</p>
-					<p><strong>Program Studi:</strong> <?= htmlspecialchars($_SESSION["prodi"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Pesan:</strong> <?= nl2br(htmlspecialchars($_SESSION["pesan"] ?? "", ENT_QUOTES, "UTF-8")) ?></p>
-				</article>
-			<?php endif; ?>
 		</section>
+
+		<section id="seminar">
+			<h2>Pendaftaran Seminar Teknologi</h2>
+			<p>Formulir Pendaftaran Seminar Teknologi</p>
+
+			<form id="seminarForm" class="js-seminar-form" data-validation="seminar" action="index.php" method="post" novalidate>
+				<div class="form-group">
+					<label for="mahasiswa">Nama Peserta</label><br />
+					<input
+						class="input-form"
+						type="text"
+						id="mahasiswa"
+						name="mahasiswa"
+						placeholder="Masukkan nama lengkap peserta"
+						minlength="3"
+						maxlength="50"
+						required />
+				</div>
+
+				<div class="form-group">
+					<label for="nim">NIM</label><br />
+
+					<input class="input-form" type="number" id="nim" name="nim" placeholder="Masukkan NIM peserta" required />
+				</div>
+
+				<div class="form-group">
+					<label for="studi">Program Studi</label><br />
+
+					<select class="input-form" id="studi" name="studi" required>
+						<option value="" disabled>-- Pilih Program Studi --</option>
+						<option value="SI">Sistem Informasi</option>
+						<option value="TI">Teknik Informatika</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="pilihan">Pilihan Seminar</label><br />
+
+					<select class="input-form" id="pilihan" name="pilihan" required>
+						<option value="" disabled>-- Pilih Seminar --</option>
+						<option value="AI">Artificial Intelligence</option>
+						<option value="WD">Web Development</option>
+						<option value="CS">Cyber Security</option>
+						<option value="DA">Data Analytics</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="alasan">Alasan mengikuti Seminar</label><br />
+
+					<textarea
+						class="input-form"
+						id="alasan"
+						name="alasan"
+						maxlength="300"
+						placeholder="Tuliskan alasan Anda"
+						required></textarea>
+				</div>
+
+				<button type="submit">Kirim</button>
+				<button type="reset">Batal</button>
+				<p class="form-feedback" data-form-feedback aria-live="polite"></p>
+			</form>
+		</section>
+
 	</main>
 
 	<footer>
