@@ -5,7 +5,7 @@
 // Sejak PHP 8.1, MySQLi secara bawaan melempar exception saat galat.
 // MYSQLI_REPORT_OFF mengembalikan perilaku klasik agar kegagalan
 // koneksi/kueri dapat diperiksa manual dengan if (sesuai materi P11).
-mysqli_report(MYSQLI_REPORT_OFF);
+// mysqli_report(MYSQLI_REPORT_OFF);
 
 $dbHost = "localhost";
 $dbUser = "root";
